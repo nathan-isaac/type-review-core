@@ -1,0 +1,8 @@
+{
+  "name": "type-review-core",
+  "version": "1.0.0",
+  "description": "Type Review Core",
+  "main": "index.js",
+  "repository": "git@github.com:nathanjisaac/type-review-core.git",
+  "license": "MIT"
+}
