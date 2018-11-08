@@ -1,4 +1,4 @@
-import jsonData from "../data/source-data.js";
+import jsonData from "../../data/source-data.js";
 import Question from "../entities/Question.js";
 
 export default class JsonQuestionGateway {
