@@ -1,11 +1,11 @@
 import ReviewQuizSessionUseCase from '../index.js'
 import InMemoryQuestionGateway from "../src/gateways/InMemoryQuestionGateway";
 
-describe('ReviewQuizSessionUseCase', function () {
+describe('ReviewQuizSessionUseCase', () => {
 
-    let viewData = {};
-    let gateway = new InMemoryQuestionGateway();
-    let useCase = new ReviewQuizSessionUseCase(gateway);
+    let viewData;
+    let gateway;
+    let useCase;
 
     beforeEach(() => {
         viewData = {};
@@ -17,8 +17,9 @@ describe('ReviewQuizSessionUseCase', function () {
         });
     });
 
-    it('should test something', function () {
+    it('should test something', () => {
         // add question
+        // ...
 
         // useCase.answerQuestion(1, 'Arial');
         //
