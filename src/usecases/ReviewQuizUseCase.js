@@ -3,6 +3,9 @@ import Quiz from "../entities/Quiz.js";
 export default class ReviewQuizSessionUseCase {
   constructor(questionGateway) {
     this.gateway = questionGateway;
+    this.viewDataChangeHandler = (data) => {
+      // do nothing by default
+    };
     this.createQuiz();
   }
 
@@ -11,20 +14,32 @@ export default class ReviewQuizSessionUseCase {
     this.quiz = new Quiz(questions);
   }
 
+  onViewDataChange(callback) {
+    this.viewDataChangeHandler = callback;
+  }
+
+  updateViewData() {
+    this.viewDataChangeHandler(this.viewModel());
+  }
+
   answerQuestion(questionId, answerText) {
     this.quiz.answerQuestion(questionId, answerText);
+    this.updateViewData();
   }
 
   checkAnswers() {
     this.quiz.submit();
+    this.updateViewData();
   }
 
   reset() {
     this.createQuiz();
+    this.updateViewData();
   }
 
   toggleAnswers() {
     this.quiz.toggleAnswers();
+    this.updateViewData();
   }
 
   viewModel() {
