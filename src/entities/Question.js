@@ -5,6 +5,7 @@ export default class Question {
     this.imageUrl = imageUrl;
     this.answer = "";
     this.isAnswerVisible = false;
+    this.isCorrect = false;
   }
 
   setAnswer(answer) {
@@ -15,10 +16,10 @@ export default class Question {
     this.isAnswerVisible = true;
   }
 
-  isCorrect() {
-    const answer = this.answer.toLowerCase().trim();
-    const correctAnswer = this.correctAnswer.toLowerCase().trim();
+  checkAnswer() {
+      const answer = this.answer.toLowerCase().trim();
+      const correctAnswer = this.correctAnswer.toLowerCase().trim();
 
-    return answer === correctAnswer;
+      this.isCorrect = answer === correctAnswer;
   }
 }

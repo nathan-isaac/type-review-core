@@ -16,6 +16,7 @@ export default class ReviewQuizSessionUseCase {
 
   onViewDataChange(callback) {
     this.viewDataChangeHandler = callback;
+    this.updateViewData();
   }
 
   updateViewData() {
@@ -48,8 +49,9 @@ export default class ReviewQuizSessionUseCase {
         id: question.id,
         correctAnswer: question.correctAnswer,
         answer: question.answer,
-        isCorrect: question.isCorrect(),
-        imageUrl: question.imageUrl
+        isCorrect: question.isCorrect,
+        imageUrl: question.imageUrl,
+        showAnswerStatus: false,
       };
     });
 

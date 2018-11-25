@@ -20,6 +20,9 @@ export default class Quiz {
 }
 
   submit() {
+    this.questions.forEach(question => {
+      question.checkAnswer();
+    });
     this.showAnswers = true;
     this.ended = true;
   }
