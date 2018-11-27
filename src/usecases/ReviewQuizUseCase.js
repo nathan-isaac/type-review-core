@@ -12,6 +12,7 @@ export default class ReviewQuizSessionUseCase {
   createQuiz() {
     const questions = this.gateway.allQuestions();
     this.quiz = new Quiz(questions);
+    this.updateViewData();
   }
 
   onViewDataChange(callback) {
