@@ -28,12 +28,15 @@ export default class ReviewQuizSessionUseCase {
     this.quiz.answerQuestion(questionId, answerText);
     this.updateViewData();
   }
-
+  // case insensitive check of submitted answer against question’s answer
+  // returns: ?
   checkAnswers() {
     this.quiz.submit();
     this.updateViewData();
   }
 
+  // gets a new quiz with shuffled questions and no answers set
+  // returns: ?
   reset() {
     this.createQuiz();
     this.updateViewData();
@@ -53,6 +56,7 @@ export default class ReviewQuizSessionUseCase {
         isCorrect: question.isCorrect,
         imageUrl: question.imageUrl,
         showAnswerStatus: false,
+        readOnly: this.quiz.ended
       };
     });
 

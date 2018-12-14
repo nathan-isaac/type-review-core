@@ -17,7 +17,7 @@ export default class Quiz {
     });
 
     question.setAnswer(answerText);
-}
+  }
 
   submit() {
     this.questions.forEach(question => {
